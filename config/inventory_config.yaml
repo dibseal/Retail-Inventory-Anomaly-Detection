@@ -1,0 +1,27 @@
+project:
+  name: retail-inventory-anomaly
+  schema_version: "1.0.0"
+  seed: 42
+generation:
+  products: 1000
+  stores: 50
+  warehouses: 5
+  history_days: 90
+  target_transactions: 100000
+  target_anomaly_rate_pct: 2.0
+  start_date: "2026-01-01"
+  output_formats: ["parquet", "csv"]
+  batch_size: 25000
+business:
+  categories: ["Apparel", "Footwear", "Accessories", "Home", "Beauty", "Electronics"]
+  transaction_types:
+    - "RECEIPT"
+    - "SALE"
+    - "TRANSFER_OUT"
+    - "TRANSFER_IN"
+    - "RETURN"
+    - "ADJUSTMENT"
+  regions: ["North", "South", "East", "West", "Central"]
+validation:
+  max_null_rate: 0.0
+  require_unique_ids: true

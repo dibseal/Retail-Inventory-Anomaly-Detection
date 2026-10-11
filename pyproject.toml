@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "retail-inventory-anomaly"
+version = "0.1.0"
+description = "Synthetic retail inventory data generation and anomaly detection MVP"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26", "pandas>=2.1", "PyYAML>=6.0", "pyarrow>=14.0", "scikit-learn>=1.4"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
